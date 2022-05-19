@@ -1,0 +1,21 @@
+*Refractor our team and their team to home and away teams
+that way you can make only the HOME team store the game results in
+the legue array list
+
+*Refractor the static method names in standing saver, it's very confusing
+and hard to read
+
+*Make a jar wioth the team classes
+
+*Make the main method not look goof
+
+*Something is wrong with the nested for loops, they are doubling somke of the valus
+
+
+
+Topic: Data analyuzing
+
+brainstorm ideas: Gambling, sports, travel, shopping
+
+general outline: A legue program that will allow you to add teams into a legue. There
+will be a class that will analyze the teams and compare them against one another

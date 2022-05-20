@@ -1,6 +1,8 @@
 package com.Legue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Team<T extends Player> implements Comparable<Team<T>> {
     private String name;
@@ -11,6 +13,13 @@ public class Team<T extends Player> implements Comparable<Team<T>> {
     private ArrayList<Game> games = new ArrayList<>();
 
     private ArrayList<T> members = new ArrayList<>();
+    static final Comparator<Player> alphebeticalOrder = new Comparator<Player>() {
+        @Override
+        public int compare(Player player1, Player player2) {
+            int lexidecimal = player1.getName().compareTo(player2.getName());
+            return lexidecimal;
+        }
+    };
 
     //get the list of games in a given team***
     public ArrayList<Game> getGames() {
@@ -96,6 +105,10 @@ public class Team<T extends Player> implements Comparable<Team<T>> {
         return (won * 2) + tied;
     }
 
+    public void alphabeticallySortedPlayers() {
+        Collections.sort(this.members, alphebeticalOrder);
+    }
+
     @Override
     public int compareTo(Team<T> team) {
         if (this.ranking() > team.ranking()) {
@@ -106,5 +119,7 @@ public class Team<T extends Player> implements Comparable<Team<T>> {
             return 0;
         }
     }
+
+
 
 }

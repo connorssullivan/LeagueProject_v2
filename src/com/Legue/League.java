@@ -8,6 +8,7 @@ public class League <T extends Team>{
     public ArrayList<T> league = new ArrayList<T>();
     private ArrayList<Game> games = new ArrayList<>();
 
+
     public League(String name) {
         this.name = name;
     }
@@ -91,9 +92,11 @@ public class League <T extends Team>{
     //get players of league in string format
     public String playesList(League league1) {
         String players = "";
+
         for (int i = 0; i < league1.league.size(); i++) {
             players+= league1.getTeam(i).getName();
             players += "\n";
+            league1.getTeam(i).alphabeticallySortedPlayers();
             for (int j = 0; j<league1.getTeam(i).numPlayers(); j++) {
                 players += league1.getPlayersString(league1.getTeam(j));
                 players +="\n";

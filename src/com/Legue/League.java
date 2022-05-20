@@ -90,7 +90,7 @@ public class League <T extends Team>{
     }
 
     //get players of league in string format
-    public String playesList(League league1) {
+    public String playesList(League league1) {//broken
         String players = "";
 
         for (int i = 0; i < league1.league.size(); i++) {
